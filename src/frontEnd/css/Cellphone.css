@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+    .GlobeImage {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Context-text-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .Content-text {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .CarbonExplanation {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .StartQuestionaryButton button {
+        width: 90%;
+    }
+}
