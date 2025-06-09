@@ -61,7 +61,7 @@ const questions = [
 
 function IniciarTeste() {
     document.querySelector("main").innerHTML = "";
-    showQuestion();
+    MostrarPerguntaUser();
 }
 
 function MostrarPerguntaUser() {
@@ -69,7 +69,7 @@ function MostrarPerguntaUser() {
     container.innerHTML = "";
 
     if (currentStep >= questions.length) {
-        showResult();
+        MostrarResultado();
         return;
     }
 
@@ -85,7 +85,7 @@ function MostrarPerguntaUser() {
         btn.addEventListener("click", () => {
             totalCO2 += option.value;
             currentStep++;
-            showQuestion();
+            MostrarPerguntaUser();
         });
         container.appendChild(btn);
     });
@@ -96,7 +96,7 @@ function MostrarResultado() {
     container.innerHTML = `
         <h2>Você emitiu aproximadamente ${totalCO2.toFixed(2)} kg de CO₂ hoje.</h2>
         <p>${GerarFeedback(totalCO2)}</p>
-        <button onclick="reset()">Refazer teste</button>
+        <button onclick="Refazer()">Refazer teste</button>
     `;
 }
 
@@ -109,7 +109,7 @@ function GerarFeedback(total) {
 function Refazer() {
     totalCO2 = 0;
     currentStep = 0;
-    iniciarTeste();
+    IniciarTeste();
 }
 
-document.querySelector(".StartQuestionaryButton button").addEventListener("click", iniciarTeste);
+document.querySelector("#start-button").addEventListener("click", IniciarTeste);
