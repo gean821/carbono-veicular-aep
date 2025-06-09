@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de CO₂</title>
+  <link rel="stylesheet" href="css/Pergunta1.css">
+</head>
+<body>
+  <div class="form-container">
+
+    <!-- Página 1 -->
+    <section class="pagina" id="pagina1">
+      <h2>🚗 Como você vai para o trabalho hoje?</h2>
+      <select id="transporte">
+        <option value="" disabled selected>Selecione</option>
+        <option value="0.25">Carro sozinho</option>
+        <option value="0.1">Ônibus</option>
+        <option value="0">Bicicleta</option>
+        <option value="0">Caminhada</option>
+        <option value="0.12">Carona</option>
+      </select>
+      <button onclick="proximaPagina(1)">Próximo</button>
+    </section>
+
+    <!-- Página 2 -->
+    <section class="pagina" id="pagina2">
+      <h2>🍽️ O que você comeu no almoço?</h2>
+      <select id="alimentacao">
+        <option value="" disabled selected>Selecione</option>
+        <option value="2.5">Churrasco</option>
+        <option value="1.0">Comida vegetariana</option>
+        <option value="0.5">Comida vegana</option>
+      </select>
+      <button onclick="proximaPagina(2)">Próximo</button>
+    </section>
+
+    <!-- Página 3 -->
+    <section class="pagina" id="pagina3">
+      <h2>💡 Você desligou as luzes ao sair?</h2>
+      <select id="energia">
+        <option value="" disabled selected>Selecione</option>
+        <option value="0">Sim</option>
+        <option value="0.2">Não</option>
+      </select>
+      <button onclick="proximaPagina(3)">Próximo</button>
+    </section>
+
+    <!-- Página 4 -->
+    <section class="pagina" id="pagina4">
+      <h2>🛍️ Você comprou algo hoje?</h2>
+      <select id="consumo">
+        <option value="" disabled selected>Selecione</option>
+        <option value="0">Não</option>
+        <option value="5">Sim, eletrônico novo</option>
+      </select>
+      <button onclick="calcularCO2()">Calcular</button>
+    </section>
+
+    <!-- Resultado -->
+    <section class="pagina" id="pagina5">
+      <h2>🌍 Resultado</h2>
+      <div id="resultado"></div>
+    </section>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
