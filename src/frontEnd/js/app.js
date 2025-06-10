@@ -1,10 +1,5 @@
 const botao = document.querySelector('#botao-startQuestionary');
 
-
-function trocaPagina() {
-    
-}
-
 function proximaPagina(paginaAtual) {
   const proxima = document.getElementById(`pagina${paginaAtual + 1}`);
   if (proxima) {
@@ -20,7 +15,7 @@ function calcularCO2() {
   const energia = parseFloat(document.getElementById("energia").value);
   const consumo = parseFloat(document.getElementById("consumo").value);
 
-  const km = 10; // Supondo distância fixa
+  const km = 10; 
   const total = (transporte * km) + alimentacao + energia + consumo;
 
   document.getElementById("resultado").innerHTML =
