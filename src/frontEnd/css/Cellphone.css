@@ -1,5 +1,5 @@
 @media (max-width: 768px) {
-    .GlobeImage {
+    .Globe-image {
         flex-direction: column;
         align-items: center;
     }
@@ -14,12 +14,12 @@
         padding: 10px;
     }
 
-    .CarbonExplanation {
+    .Carbon-explanation {
         margin-left: 0;
         padding: 20px;
     }
 
-    .StartQuestionaryButton button {
+    .Start-questionary-button button {
         width: 90%;
     }
 }
