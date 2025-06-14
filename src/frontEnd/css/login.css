@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     justify-content:center;
     margin-bottom: 200px;
     font-size: large;
@@ -29,7 +29,7 @@ body {
 }
 
 .content-description h2 {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .login-wrapper {

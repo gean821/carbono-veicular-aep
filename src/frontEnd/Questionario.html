@@ -4,70 +4,162 @@
   <meta charset="UTF-8">
   <title>Calculadora de CO₂</title>
   <link rel="stylesheet" href="css/Questionario.css">
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+    </style>
 </head>
 <body>
-
+  <header>
+    <nav class="navbar">
+      <h1>Calculador de Carbono🌍</h1>
+    </nav>
+  </header>
   <div class="form-container">
-  
     <!-- Página 1 -->
     <section class="pagina" id="pagina1">
       <h2>🚗 Como você vai para o trabalho hoje?</h2>
-      <select id="transporte">
-        <option value="" disabled selected>Selecione</option>
-        <option value="0.25">Carro sozinho</option>
-        <option value="0.1">Ônibus</option>
-        <option value="0">Bicicleta</option>
-        <option value="0">Caminhada</option>
-        <option value="0.12">Carona</option>
-      </select>
-      <button onclick="proximaPergunta(1)">Próximo</button>
-    </section>
-
-    <!-- Pergunta 2-->
-    <section class="pagina" id="pagina2">
-      <h2>🍽️ O que você comeu no almoço?</h2>
-      <select id="alimentacao">
-        <option value="" disabled selected>Selecione</option>
-        <option value="2.5">Churrasco</option>
-        <option value="1.0">Comida vegetariana</option>
-        <option value="0.5">Comida vegana</option>
-      </select>
-      <button onclick="proximaPergunta(2)">Próximo</button>
-    </section>
-
-    <!-- Pergunta 3 -->
-    <section class="pagina" id="pagina3">
-      <h2>💡 Você desligou as luzes ao sair?</h2>
-      <select id="energia">
-        <option value="" disabled selected>Selecione</option>
-        <option value="0">Sim</option>
-        <option value="0.2">Não</option>
-      </select>
-      <button onclick="proximaPergunta(3)">Próximo</button>
-    </section>
-
-    <!-- Pergunta 4 -->
-    <section class="pagina" id="pagina4">
-      <h2>🛍️ Você comprou algo hoje?</h2>
-      <select id="consumo">
-        <option value="" disabled selected>Selecione</option>
-        <option value="0">Não</option>
-        <option value="5">Sim, eletrônico novo</option>
-      </select>
-      <button onclick="calcularCO2()">Calcular</button>
-    </section>
-
-    <!-- Resultado -->
-    <section class="pagina" id="pagina5">
-      <h2>🌍 Resultado</h2>
-      <div id="resultado"></div>
-      <div class="decisao-do-usuario">
-        
+      <div class="opcoes" data-pergunta="transporte">
+        <button data-value="0.25">A- 🚗Carro sozinho</button>
+        <button data-value="0.1">B- 🚌 Ônibus</button>
+        <button data-value="0">C- 🚴‍♂️ Bicicleta</button>
+        <button data-value="0">D- 🚶‍♂️Caminhada</button>
+        <button data-value="0.12">E- 🤝Carona</button>
       </div>
     </section>
 
-  </div>
+    <!-- Pergunta 2-->
+     <section class="pagina" id="pagina2">
+    <h2>🍽️ O que você comeu no almoço?</h2>
+    <div class="opcoes" data-pergunta="alimentacao">
+      <button data-value="2.5">A - Churrasco</button>
+      <button data-value="1.0">B - Comida vegetariana</button>
+      <button data-value="0.5">C - Comida vegana</button>
+    </div>
+  </section>
 
-  <script src="js/app.js"></script>
+  <!-- Pergunta 3 -->
+  <section class="pagina" id="pagina3">
+    <h2>💡 Você desligou as luzes ao sair?</h2>
+    <div class="opcoes" data-pergunta="energia">
+      <button data-value="0">A - Sim</button>
+      <button data-value="0.2">B - Não</button>
+    </div>
+  </section>
+
+  <!-- Pergunta 4 -->
+  <section class="pagina" id="pagina4">
+    <h2>🛍️ Você comprou algo hoje?</h2>
+    <div class="opcoes" data-pergunta="consumo">
+      <button data-value="5">A - Sim, eletrônico novo</button>
+      <button data-value="2">B - Sim, roupa</button>
+      <button data-value="0">C - Não comprei nada</button>
+    </div>
+  </section>
+
+  <!-- Pergunta 5 -->
+  <section class="pagina" id="pagina5">
+    <h2>♻️ Você separa o lixo reciclável?</h2>
+    <div class="opcoes" data-pergunta="residuos">
+      <button data-value="0">A - Não</button>
+      <button data-value="1">B - Sim</button>
+    </div>
+  </section>
+
+  <div class="pagina" id="pagina6">
+  <h2>Você utiliza fontes de energia renovável?</h2>
+  <div class="opcoes" data-pergunta="energia_renovavel">
+    <button data-value="0">Sim, 100%</button>
+    <button data-value="2">Parcialmente</button>
+    <button data-value="5">Não</button>
+  </div>
+</div>
+
+<!-- Pergunta 7 -->
+<div class="pagina" id="pagina7">
+  <h2>Quantas pessoas moram na sua casa?</h2>
+  <div class="opcoes" data-pergunta="moradores">
+    <button data-value="1">1</button>
+    <button data-value="2">2</button>
+    <button data-value="3">3</button>
+    <button data-value="4">4 ou mais</button>
+  </div>
+</div>
+
+<!-- Pergunta 8 -->
+<div class="pagina" id="pagina8">
+  <h2>Qual tipo de transporte você mais usa?</h2>
+  <div class="opcoes" data-pergunta="tipo_transporte">
+    <button data-value="10">Carro</button>
+    <button data-value="7">Moto</button>
+    <button data-value="5">Transporte público</button>
+    <button data-value="2">Bicicleta</button>
+    <button data-value="0">A pé</button>
+  </div>
+</div>
+
+<!-- Pergunta 9 -->
+<div class="pagina" id="pagina9">
+  <h2>Quantos km você percorre por semana com esse transporte?</h2>
+  <div class="opcoes" data-pergunta="km_semana">
+    <button data-value="5">Até 10 km</button>
+    <button data-value="10">11 a 30 km</button>
+    <button data-value="20">31 a 60 km</button>
+    <button data-value="30">Mais de 60 km</button>
+  </div>
+</div>
+
+<!-- Pergunta 10 -->
+<div class="pagina" id="pagina10">
+  <h2>Com que frequência você consome carne vermelha?</h2>
+  <div class="opcoes" data-pergunta="carne">
+    <button data-value="0">Nunca</button>
+    <button data-value="3">1 a 2 vezes/semana</button>
+    <button data-value="5">3 a 4 vezes/semana</button>
+    <button data-value="8">Quase todos os dias</button>
+  </div>
+</div>
+
+<!-- Pergunta 11 -->
+<div class="pagina" id="pagina11">
+  <h2>Você compra roupas novas com frequência?</h2>
+  <div class="opcoes" data-pergunta="roupas">
+    <button data-value="1">Raramente</button>
+    <button data-value="3">Uma vez por mês</button>
+    <button data-value="5">Mais de uma vez por mês</button>
+  </div>
+</div>
+
+<!-- Pergunta 12 -->
+<div class="pagina" id="pagina12">
+  <h2>Você separa seu lixo reciclável?</h2>
+  <div class="opcoes" data-pergunta="reciclagem">
+    <button data-value="0">Sempre</button>
+    <button data-value="2">Às vezes</button>
+    <button data-value="5">Nunca</button>
+  </div>
+</div>
+
+<!-- Pergunta 13 -->
+<div class="pagina" id="pagina13">
+  <h2>Você reutiliza embalagens, potes ou sacolas?</h2>
+  <div class="opcoes" data-pergunta="reutilizacao">
+    <button data-value="0">Sempre</button>
+    <button data-value="2">Às vezes</button>
+    <button data-value="4">Nunca</button>
+  </div>
+</div>
+
+  <!-- Resultado -->
+<section id="resultado-final" class="pagina">
+  <div id="resultado-container">
+    <h2>🌍 Resultado</h2>
+    <div id="resultado"></div>
+    <div id="mensagem-usuario" class="mensagem-usuario"></div>
+    <div class="decisao-do-usuario"></div>
+  </div>
+</section>
+
+
+  <script src="/src/frontEnd/js/questionario.js"></script>
 </body>
 </html>

@@ -4,14 +4,31 @@ body {
   background-color: white;
   color: black;
   scroll-behavior: smooth;
+  font-family: "Julius Sans One", sans-serif; ;
 }
 
+.navbar {
+  display: flex;
+  justify-content: start;
+  padding: 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar h1{
+  font-family: "Julius Sans One", sans-serif;
+}
 .form-container {
   width: 100vw;
   overflow: hidden;
 }
 
 .pagina {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  position: absolute;
   height: 100vh;
   width: 100vw;
   padding: 40px;
@@ -41,6 +58,34 @@ select {
   background-color: white;
 }
 
+
+.opcoes {
+  display: flex;
+  flex-direction:column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.opcoes button {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #1877f2;
+  color: white;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.opcoes button:hover {
+  background-color: #145dbf;
+}
+
+.opcoes button:active {
+  transform: scale(0.97);
+}
+
+
 button {
   padding: 10px 20px;
   background-color: black;
@@ -55,10 +100,36 @@ button:hover {
   background-color: #333;
 }
 
-#resultado {
-  font-size: 22px;
+#resultado-container {
   text-align: center;
-  margin-top: 20px;
+  padding:30px;
+  border-radius: 15px;
+  background-color:#f3f3f3;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: auto;
+}
+
+#resultado {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.mensagem-usuario {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.resultado-baixo {
+  color: green;
+}
+
+.resultado-medio {
+  color: orange;
+}
+
+.resultado-alto {
+  color: red;
 }
 
 
@@ -67,10 +138,41 @@ button:hover {
   gap: 20px;
   justify-content: center;
   align-items: center;
-  margin-top:auto;
-  margin-bottom: auto;
+  flex-wrap: wrap;
+}
+
+.decisao-do-usuario button {
+  padding: 12px 24px;
+  background-color: #1877f2;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .decisao-do-usuario button:hover {
-  transform: scale(1.2);
+ background-color: #145dbf;
+  transform: scale(1.1);
+}
+
+
+#resultado-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 40px;
+  background-color: white;
+}
+
+
+
+.pagina.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
 }
