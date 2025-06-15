@@ -1,3 +1,4 @@
+
 const formLogin = document.querySelector('#login-form');
 const usuarios = [];
 
@@ -15,13 +16,12 @@ if (formLogin) {
     localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
 
     let usuariosArmazenados = JSON.parse(localStorage.getItem("usuariosArmazenados")) || [];
-    const jaExisteUsuario = usuariosArmazenados.filter(user => user.email === email);
-    if (!jaExisteUsuario.length) {
+    const jaExisteUsuario = usuariosArmazenados.some(user => user.email === usuarioLogado.email);
+    if (!jaExisteUsuario) {
       usuariosArmazenados.push(usuarioLogado);
       localStorage.setItem("usuariosArmazenados", JSON.stringify(usuariosArmazenados));
     }
-
     window.location.href = "/src/frontEnd/Questionario.html";
-  }
-});
-}
+  }  
+})
+};

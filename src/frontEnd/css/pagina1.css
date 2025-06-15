@@ -131,7 +131,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Julius Sans One", sans-serif;
-    margin-bottom: 20px;
+    margin-top:50px;
     
 }
 
@@ -182,8 +182,102 @@ html {
 }
 
 
+.dev-cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 120px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.dev-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+    transition: transform 0.3s ease;
+    margin-top: 30px;
+
+}
+
+.dev-card:hover {
+    transform: translateY(-5px);
+}
+
+.dev-card p {
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.dev-card .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dev-card .social-links img {
+    height: 50px;
+    border-radius: 20px;
+    width:auto;
+    transition: transform 0.3s ease;
+}
+
+.dev-card .social-links img:hover {
+    transform: scale(1.2);
+}
 
 
+.footer-final {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    margin-top: 40px;
+    box-shadow: inset 0 1px 0 #222;
+}
+
+.background-molecules {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.molecule {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  animation: float 20s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-1000px) translateX(200px);
+    opacity: 0;
+  }
+}
 
 
     

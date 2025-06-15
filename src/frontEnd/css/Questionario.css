@@ -85,7 +85,6 @@ select {
   transform: scale(0.97);
 }
 
-
 button {
   padding: 10px 20px;
   background-color: black;
@@ -99,6 +98,7 @@ button {
 button:hover {
   background-color: #333;
 }
+
 
 #resultado-container {
   text-align: center;
