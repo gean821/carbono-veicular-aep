@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main class="dashboard-container">
+        <h1>Seu resultado de emissão de carbono de CO₂</h1>
+        <section class="dashboard-dados">
+      <p><strong>Email:</strong> <span id="dash-email"></span></p>
+      <p><strong>Total de CO₂:</strong> <span id="dash-total"></span> kg</p>
+      <p><strong>Data:</strong> <span id="dash-data"></span></p>
+    </section>
+    <div class="compartilhar-opcoes">
+      <button id="copiar-link">📋 Copiar Link</button>
+      <button id="baixar-dash">📥 Baixar imagem</button>
+      <button id="compartilhar-whatsapp">📲 WhatsApp</button>
+      <button id="voltar">🔙 Voltar</button>
+    </div>
+  </main>
+    <script src="/src/frontEnd/js/dashboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</body>
+</html>

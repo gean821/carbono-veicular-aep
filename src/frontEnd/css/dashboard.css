@@ -1,0 +1,44 @@
+body {
+  font-family:"Julius Sans One", sans-serif; 
+  background-color: #eef2f3;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dashboard-container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.dashboard-dados p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.compartilhar-opcoes button {
+  margin: 1rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.compartilhar-opcoes button:hover {
+  background-color: #388e3c;
+}
+
+
+#compartilhar-whatsapp {
+  background-color: #25D366;
+}
+
+#compartilhar-whatsapp:hover {
+  background-color: #1ebe5d;
+}
